@@ -2,8 +2,9 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NON</title>
+  <meta name="theme-color" content="#08090d">
   <!-- ブラウザのタブ用ファビコン -->
   <link rel="icon" type="image/jpeg" href="S__150183938.jpg">
   <!-- スマホのホーム画面アイコン用 -->
@@ -386,7 +387,7 @@
       transition: transform 0.1s ease-out, box-shadow 0.25s ease;
       transform-style: preserve-3d;
       overflow: hidden;
-      cursor: pointer;
+      cursor: default;
     }
 
     .tilt-card:hover {
@@ -496,6 +497,236 @@
         align-items: flex-start;
       }
     }
+
+    :root {
+      --bg: #08090d;
+      --red: #ff2548;
+      --red-deep: #6b0a1c;
+      --white: #f5f4f2;
+      --silver: #a4a8b2;
+    }
+
+    body {
+      background-color: var(--bg);
+    }
+
+    body::before { opacity: .018; }
+
+    .bg-mesh {
+      background:
+        radial-gradient(ellipse at 82% 32%, rgba(128, 10, 34, .24), transparent 42%),
+        radial-gradient(ellipse at 12% 88%, rgba(64, 10, 26, .2), transparent 42%),
+        #08090d;
+    }
+
+    .slash-backdrop {
+      width: 40vw;
+      background: linear-gradient(145deg, rgba(255, 37, 72, .12), rgba(255, 37, 72, .015));
+    }
+
+    .bg-giant-text {
+      left: 60%;
+      color: transparent;
+      -webkit-text-stroke-color: rgba(255, 255, 255, .025);
+      transform: translate(-50%, -50%) rotate(-8deg);
+    }
+
+    .app-viewport {
+      width: 100%;
+      padding: clamp(1.5rem, 4vw, 3.75rem);
+    }
+
+    header {
+      border-bottom-color: rgba(255, 255, 255, .16);
+      padding-bottom: 1.35rem;
+    }
+
+    .brand-mark { gap: .65rem; }
+    .brand-jp { font-size: clamp(1.55rem, 2.7vw, 2.2rem); }
+    .brand-en { color: var(--red); }
+
+    .top-badge {
+      border-color: rgba(255, 37, 72, .48);
+      background: rgba(255, 37, 72, .08);
+      color: #ffdce2;
+      letter-spacing: .16em;
+    }
+
+    .stage-grid {
+      grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+      gap: clamp(2.5rem, 6vw, 6rem);
+      margin: clamp(3rem, 7vh, 6rem) 0;
+    }
+
+    .content-block { gap: clamp(1.6rem, 3.5vh, 2.8rem); }
+    .category-kicker { color: #ff7188; letter-spacing: .22em; }
+
+    .main-title {
+      font-size: clamp(5rem, 12vw, 11rem);
+      letter-spacing: -.055em;
+      line-height: .78;
+    }
+
+    .title-jp {
+      margin-bottom: .18em;
+      font-size: .34em;
+      letter-spacing: .28em;
+    }
+
+    .title-en-pill {
+      padding: 0 .16em .04em;
+      background: var(--red);
+      color: #fff;
+      border-radius: 0;
+      transform: skewX(-7deg);
+      box-shadow: 7px 7px 0 rgba(5, 5, 8, .8);
+    }
+
+    .record-plate {
+      gap: 1.35rem;
+      padding: clamp(1.2rem, 2.5vw, 2rem);
+      border-color: rgba(255, 255, 255, .17);
+      border-radius: 10px;
+      background: linear-gradient(145deg, rgba(24, 25, 31, .96), rgba(11, 12, 16, .97));
+      box-shadow: 0 24px 60px rgba(0, 0, 0, .46), inset 0 1px 0 rgba(255,255,255,.045);
+      backdrop-filter: blur(14px);
+    }
+
+    .record-plate::after {
+      width: 72px;
+      height: 4px;
+      background: var(--red);
+    }
+
+    .plate-top {
+      border-bottom-color: rgba(255,255,255,.2);
+      padding-bottom: 1rem;
+    }
+
+    .rank-prefix { color: #c0c3cb; font-size: .75rem; }
+    .rank-num {
+      font-size: clamp(3rem, 5.2vw, 4.4rem);
+      background: linear-gradient(180deg, #fff 20%, #aeb2bc 100%);
+      -webkit-background-clip: text;
+      filter: drop-shadow(0 3px 14px rgba(255,255,255,.12));
+    }
+
+    .badge-silver {
+      color: #111216;
+      background: #e4e6eb;
+      box-shadow: none;
+    }
+
+    .season-name { font-size: .9rem; }
+
+    .strip-item {
+      border-color: rgba(255,255,255,.13);
+      border-radius: 3px;
+      background: rgba(255,255,255,.055);
+    }
+
+    .strip-item.highlight {
+      border-color: rgba(255,37,72,.72);
+      background: rgba(255,37,72,.13);
+    }
+
+    .strip-item.highlight .k,
+    .c-type { color: #ff7188; }
+
+    .deck-row { gap: .55rem; }
+
+    .deck-card {
+      min-height: 76px;
+      justify-content: center;
+      border-color: rgba(255,255,255,.16);
+      border-top: 2px solid var(--red);
+      border-radius: 3px;
+      background: #0a0b0f;
+      transition: transform .2s ease, background-color .2s ease, border-color .2s ease;
+    }
+
+    .deck-card:hover {
+      border-color: rgba(255,255,255,.7);
+      background: #171116;
+      transform: translateY(-4px);
+    }
+
+    .visual-column { min-width: 0; }
+
+    .tilt-card {
+      max-width: 560px;
+      border: 1px solid rgba(255,255,255,.28);
+      border-radius: 8px;
+      box-shadow: 14px 14px 0 var(--red), 0 34px 80px rgba(0,0,0,.62);
+      transition: transform .24s ease-out, box-shadow .25s ease;
+    }
+
+    .tilt-card:hover {
+      box-shadow: 14px 14px 0 #a90c2a, 0 40px 90px rgba(0,0,0,.68);
+    }
+
+    .tilt-card img { object-position: center 38%; }
+
+    footer {
+      border-top-color: rgba(255,255,255,.16);
+      mix-blend-mode: normal;
+    }
+
+    .social-btn {
+      border: 1px solid rgba(255,255,255,.58);
+      border-radius: 4px;
+      letter-spacing: .04em;
+    }
+
+    .social-btn:hover {
+      border-color: var(--red);
+      background: var(--red);
+      box-shadow: 0 10px 28px rgba(255,37,72,.25);
+    }
+
+    :focus-visible {
+      outline: 2px solid #ff7188;
+      outline-offset: 4px;
+    }
+
+    @media (max-width: 1024px) {
+      .stage-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 3.5rem;
+        margin: 3rem 0;
+      }
+
+      .visual-column { order: -1; }
+      .tilt-card {
+        max-width: min(72vw, 440px);
+        box-shadow: 10px 10px 0 var(--red), 0 28px 60px rgba(0,0,0,.6);
+      }
+
+      .slash-backdrop {
+        width: 100vw;
+        height: 38vh;
+        clip-path: polygon(0 0, 100% 0, 100% 72%, 0 100%);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .app-viewport { padding: 1.2rem; }
+      .stage-grid { gap: 2.6rem; margin: 2.5rem 0; }
+      .main-title { font-size: clamp(4.5rem, 22vw, 7rem); }
+      .record-plate { padding: 1.1rem; }
+      .deck-row { gap: .45rem; }
+      .deck-card { min-height: 72px; }
+      .tilt-card {
+        max-width: min(76vw, 330px);
+        box-shadow: 8px 8px 0 var(--red), 0 24px 48px rgba(0,0,0,.62);
+      }
+      footer { flex-direction: row; align-items: center; gap: .75rem; }
+      .social-btn { padding: .45rem .8rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
   </style>
 </head>
 <body>
@@ -600,10 +831,10 @@
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
       
-      const rotateX = ((y - centerY) / centerY) * -12;
-      const rotateY = ((x - centerX) / centerX) * 12;
+      const rotateX = ((y - centerY) / centerY) * -6;
+      const rotateY = ((x - centerX) / centerX) * 6;
       
-      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.01, 1.01, 1.01)`;
     });
 
     card.addEventListener('mouseleave', () => {
@@ -612,7 +843,7 @@
 
     // モバイル：タップ時の沈み込み
     card.addEventListener('touchstart', () => {
-      card.style.transform = 'perspective(1000px) scale3d(0.96, 0.96, 0.96)';
+      card.style.transform = 'perspective(1000px) scale3d(0.985, 0.985, 0.985)';
     }, { passive: true });
 
     card.addEventListener('touchend', () => {
