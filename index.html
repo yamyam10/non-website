@@ -117,26 +117,6 @@
       padding-bottom: 1.2rem;
     }
 
-    .brand-mark {
-      display: flex;
-      align-items: baseline;
-      gap: 0.8rem;
-    }
-
-    .brand-jp {
-      font-size: clamp(1.4rem, 2.5vw, 2rem);
-      font-weight: 900;
-      letter-spacing: -0.5px;
-    }
-
-    .brand-en {
-      font-family: var(--font-display);
-      font-size: clamp(0.85rem, 1.2vw, 1rem);
-      font-weight: 900;
-      letter-spacing: 3px;
-      color: var(--red);
-    }
-
     .top-badge {
       font-family: var(--font-display);
       font-size: 0.75rem;
@@ -727,6 +707,240 @@
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
     }
+
+    @media (max-width: 760px) {
+      body::before { display: none; }
+
+      .bg-mesh {
+        background:
+          radial-gradient(ellipse at 86% 20%, rgba(128, 10, 34, .2), transparent 36%),
+          #08090d;
+      }
+
+      .slash-backdrop { height: 30vh; opacity: .6; }
+
+      .app-viewport {
+        min-height: 100svh;
+        justify-content: flex-start;
+        padding: 18px 18px max(24px, env(safe-area-inset-bottom));
+      }
+
+      header {
+        gap: 12px;
+        padding-bottom: 12px;
+      }
+
+      .top-badge {
+        padding: 3px 0 3px 10px;
+        border: 0;
+        border-left: 2px solid var(--red);
+        border-radius: 0;
+        background: transparent;
+        color: #ffc4cf;
+        font-size: .6rem;
+        letter-spacing: .16em;
+        white-space: nowrap;
+        backdrop-filter: none;
+      }
+
+      .stage-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+          "title"
+          "visual"
+          "record";
+        align-items: start;
+        gap: 0;
+        margin: 25px 0 30px;
+      }
+
+      .content-block { display: contents; }
+
+      .title-group {
+        grid-area: title;
+        gap: 5px;
+        margin-bottom: 19px;
+      }
+
+      .category-kicker {
+        margin-bottom: 2px;
+        color: #a4a8b2;
+        font-size: .62rem;
+        letter-spacing: .2em;
+      }
+
+      .main-title {
+        display: flex;
+        align-items: baseline;
+        gap: .12em;
+        min-width: 0;
+        font-size: clamp(4.6rem, 19vw, 7rem);
+        line-height: .88;
+        letter-spacing: -.06em;
+        white-space: nowrap;
+      }
+
+      .title-jp {
+        display: inline-block;
+        margin: 0;
+        font-size: .34em;
+        letter-spacing: .12em;
+      }
+
+      .title-en-pill {
+        padding: 0 .14em .04em;
+        box-shadow: 4px 4px 0 #090a0d;
+      }
+
+      .visual-column {
+        grid-area: visual;
+        order: 0;
+        margin-bottom: 28px;
+      }
+
+      .tilt-card {
+        width: 100%;
+        max-width: none;
+        aspect-ratio: 1 / 1;
+        border: 1px solid rgba(255,255,255,.25);
+        border-radius: 12px;
+        box-shadow: 6px 6px 0 var(--red), 0 24px 56px rgba(0,0,0,.5);
+        transform: none !important;
+        transition: none;
+        cursor: default;
+        touch-action: pan-y;
+      }
+
+      .tilt-card:hover {
+        box-shadow: 6px 6px 0 var(--red), 0 24px 56px rgba(0,0,0,.5);
+      }
+
+      .tilt-card img {
+        object-position: center 38%;
+        transition: none;
+      }
+
+      .tilt-card:hover img { transform: none; }
+
+      .tilt-card::after {
+        position: absolute;
+        bottom: 14px;
+        left: 14px;
+        padding: 8px 11px;
+        border-left: 2px solid var(--red);
+        background: rgba(5,5,7,.78);
+        color: #fff;
+        content: "MAIN HERO";
+        font-family: var(--font-display);
+        font-size: .65rem;
+        font-weight: 900;
+        letter-spacing: .16em;
+        backdrop-filter: blur(8px);
+      }
+
+      .record-plate {
+        grid-area: record;
+        gap: 17px;
+        padding: 18px;
+        border: 1px solid rgba(255,255,255,.1);
+        border-radius: 12px;
+        background: linear-gradient(145deg, #17181d, #0d0e12 76%);
+        box-shadow: 0 16px 38px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.05);
+      }
+
+      .record-plate::after { width: 58px; height: 3px; }
+
+      .plate-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        padding-bottom: 13px;
+      }
+
+      .plate-rank { align-items: center; gap: 8px; }
+      .rank-prefix { color: #ff7188; font-size: .67rem; letter-spacing: .15em; }
+      .rank-num { font-size: 3.1rem; }
+
+      .plate-season {
+        align-items: flex-end;
+        gap: 6px;
+        text-align: right;
+      }
+
+      .badge-silver { font-size: .56rem; letter-spacing: .1em; }
+      .season-name { font-size: .72rem; color: #d7d8de; }
+
+      .spec-strip {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .strip-item {
+        display: flex;
+        min-width: 0;
+        min-height: 46px;
+        align-items: center;
+        gap: 6px;
+        padding: 9px 10px;
+        border-radius: 5px;
+        background: rgba(255,255,255,.065);
+        font-size: .78rem;
+      }
+
+      .strip-item:nth-child(3) {
+        grid-column: 1 / -1;
+        border-left: 2px solid var(--red);
+      }
+      .strip-item .k { flex: 0 0 auto; font-size: .6rem; }
+
+      .deck-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        margin-top: 1px;
+      }
+
+      .deck-card {
+        min-height: 68px;
+        gap: 6px;
+        padding: 10px;
+        border-radius: 6px;
+        background: linear-gradient(145deg, #121318, #090a0d);
+      }
+
+      .c-type { font-size: .58rem; letter-spacing: .12em; }
+      .c-name { font-size: .9rem; }
+
+      footer {
+        gap: 12px;
+        padding-top: 16px;
+        mix-blend-mode: normal;
+      }
+
+      .footer-brand { font-size: .78rem; }
+
+      .social-btn {
+        min-height: 44px;
+        justify-content: center;
+        padding: 8px 14px;
+        font-size: .8rem;
+      }
+    }
+
+    @media (max-width: 360px) {
+      .app-viewport { padding-right: 14px; padding-left: 14px; }
+      .stage-grid { margin-top: 21px; }
+      .plate-top { align-items: flex-start; }
+      .plate-season { max-width: 55%; }
+      .season-name { font-size: .64rem; }
+      .record-plate { padding: 14px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .tilt-card, .tilt-card img { transition: none !important; }
+    }
   </style>
 </head>
 <body>
@@ -740,11 +954,7 @@
     
     <!-- ヘッダー -->
     <header>
-      <div class="brand-mark">
-        <span class="brand-jp">乃夢</span>
-        <span class="brand-en">NON</span>
-      </div>
-      <div class="top-badge">ARCHIVE // RECORD</div>
+      <div class="top-badge">COMPASS ARCHIVE</div>
     </header>
 
     <!-- メイングリッド -->
@@ -753,7 +963,7 @@
       <!-- テキスト＆リザルトプレート -->
       <div class="content-block">
         <div class="title-group">
-          <div class="category-kicker">COMPASS RECORD</div>
+          <div class="category-kicker">PROFILE / 01</div>
           <h1 class="main-title">
             <span class="title-jp">乃夢</span>
             <span class="title-en-pill">NON</span>
